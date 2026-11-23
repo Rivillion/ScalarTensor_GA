@@ -24,3 +24,7 @@ fonts/
 # Local tool settings
 .claude/
 .DS_Store
+
+# LaTeX build files from compiling the TikZ diagrams
+figures/*.aux
+figures/*.log

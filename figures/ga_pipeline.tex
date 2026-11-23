@@ -1,0 +1,167 @@
+% ga_pipeline.tex -- standalone source for Fig. "fig:ga_pipeline"
+% Build:  pdflatex ga_pipeline.tex   ->  ga_pipeline.pdf
+% Use:    paste the GA-OVERLAY block printed in ga_pipeline.log into the
+%         figure environment of the paper. It includes ga_pipeline.pdf at its
+%         natural size and, through \figeqlink (defined in the paper's
+%         preamble), adds invisible hyperlinks over the equation numbers and
+%         warns if a number below no longer matches the paper.
+%
+% Same class and font setup as the paper, so \small, \footnotesize and the
+% math fonts are identical. preview crops the page to the TikZ bounding box,
+% i.e. exactly the box the inline tikzpicture occupied.
+\documentclass[10pt,prd,preprintnumbers,floatfix,aps,nofootinbib,twocolumn,superscriptaddress,noshowpacs]{revtex4-1}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsbsy}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage[cal=cm]{mathalfa}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,fit,backgrounds,shapes.geometric,calc,tikzmark}
+\definecolor{treeblue}{RGB}{48,132,196}
+\definecolor{treebluedark}{RGB}{35,100,150}
+\definecolor{evalorange}{RGB}{214,120,30}
+% Highlight tying the offspring evaluation in step 5 to step 2.
+\newcommand{\evaltag}[1]{\tikz[remember picture, baseline=(evaltag.base)]
+    \node[draw=evalorange, fill=evalorange!15, rounded corners=2pt, line width=0.7pt,
+          inner xsep=1.5pt, inner ysep=0.5pt, minimum height=0pt, minimum width=0pt, text width=, align=none] (evaltag) {\strut #1};}
+
+% Equation numbers as they appear in the paper. They are printed in the figure
+% itself (so the PDF is complete on its own); the paper checks them against
+% its labels at every compile and warns if one has changed.
+\newcommand{\eqFriedmann}{3}   % eq:friedmann
+\newcommand{\eqKG}{4}          % eq:KGcosmic
+\newcommand{\eqViab}{5}        % eq:viability_conditions
+
+% Links overlaid by the paper: <tikzmark name>/<label>/<number>.
+\newcommand{\eqrefmarks}{%
+    bgA/eq:friedmann/\eqFriedmann,
+    bgB/eq:KGcosmic/\eqKG,
+    viab/eq:viability_conditions/\eqViab}
+
+% Equation number styled like \eqref with hyperref: black parentheses, number
+% in the paper's link colour (allcolors=Blue).
+\newcommand{\eqlink}[2]{(\tikzmark{#1}\textcolor{Blue}{#2})}
+\makeatletter\let\pct\@percentchar\makeatother  % a literal % for \typeout
+
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{.1pt}
+
+\begin{document}
+\begin{tikzpicture}[
+    remember picture,
+    node distance=5mm,
+    block/.style={
+        rectangle, draw=treeblue, rounded corners, line width=0.85pt,
+        fill=treeblue!10!white, align=center, font=\small,
+        text width=52mm,
+        inner sep=3pt, minimum height=12.7mm
+    },
+    final/.style={
+        block, fill=white, line width=1.4pt, draw=treebluedark
+    },
+    decision/.style={
+        diamond, aspect=2, draw=treeblue, line width=0.85pt, fill=white,
+        inner sep=0.5pt, font=\small
+    },
+    arrow/.style={-{Stealth[length=2.mm]}, thick, draw=treebluedark},
+    lbl/.style={font=\footnotesize, inner sep=1.5pt}
+]
+    % ---------------- nodes ----------------
+    \node[block] (init) {
+        \textbf{1. Initialize population} \(g\!\!=\!\!1\)\\
+        Random individuals \(j \!=\! 1, \dots, N_{\rm pop}\):\\
+        \(\mathcal{I}_j \!\!=\!\! \{F_j(\varphi; \boldsymbol{c}_{F\!,j}), U_j(\varphi; \boldsymbol{c}_{U,j})\}\)
+    };
+    \node[block, below=of init, draw=evalorange, fill=evalorange!15] (eval) {
+        \textbf{2. Evaluate each individual}\\
+        Minimize \(\chi^2(\boldsymbol{\theta}_j, \boldsymbol{c}_j)\) subject to\\
+        background~\eqlink{bgA}{\eqFriedmann}--\eqlink{bgB}{\eqKG} and viability~\eqlink{viab}{\eqViab}
+    };
+    \node[block, below=8mm of eval] (sel) {
+        \textbf{3. Tournament selection}\\
+        Compare random groups by \(\chi^2\);\\
+        pick winners and losers
+    };
+    \node[block, below=of sel] (cross) {
+        \textbf{4. Genetic operations}\\
+        Crossover and mutation of the winners'\\
+        \(\{F(\varphi),\, U(\varphi)\}\) produce offspring
+    };
+    \node[block, below=of cross] (replace) {
+        \textbf{5. Next generation}\\
+        Offspring, evaluated as in \evaltag{step 2},\\
+        replace losers; \(g \!\!\to\!\! g\!+\!1\)
+    };
+    \node[decision, below=of replace] (stop) {\(g < N_{\rm gen}\)?};
+    \node[final, below=8mm of stop] (termination) {
+        \textbf{6. Output}\\
+        Best individual \(\mathcal{I}_\star\) (lowest \(\chi^2\))\\
+        and its best-fit \(\{\hat{\boldsymbol{\theta}}_\star, \hat{\boldsymbol{c}}_\star\}\)
+    };
+
+    % ---------------- generation-loop panel ----------------
+    \coordinate (rail)   at ([xshift=5mm]sel.east);
+    \coordinate (lrail)  at ([xshift=-5mm]sel.west);    % mirrors the rail, keeps it centred
+    \coordinate (padtop) at ([yshift=5mm]sel.north);    % room for the label
+    \coordinate (padbot) at ([yshift=-5mm]stop.south);  % room for "no"
+    \begin{scope}[on background layer]
+        \node[fit=(lrail)(sel)(stop)(rail)(padtop)(padbot),
+              inner xsep=2.5mm, inner ysep=0pt, line width=0.5pt,
+              fill=black!5, draw=black!30, rounded corners=4pt] (loop) {};
+    \end{scope}
+    \node[anchor=north west, font=\small,
+    text=black!75, inner sep=2.5pt] at (loop.north west) {Generation loop};
+    \node[anchor=north east, font=\small,
+    text=black!75, inner sep=2.5pt] at (loop.north east) {\(g = 2, \dots, N_{\rm gen}\)};
+
+    % ---------------- arrows ----------------
+    \draw[arrow] (init) -- (eval);
+    \draw[arrow] (eval) -- (sel);
+    \draw[arrow] (sel) -- (cross);
+    \draw[arrow] (cross) -- (replace);
+    \draw[arrow] (replace) -- (stop);
+    \draw[arrow] (stop) -- node[lbl, right, pos=0.25] {no} (termination);
+    \draw[arrow] (stop.east) -- node[lbl, above, pos=0.5] {yes}
+        (stop.east -| rail) -- (rail) -- (sel.east);
+
+    % ---------------- equation references for the main document ----------------
+    % Prints (in the .log) the GA-OVERLAY block to paste into the figure
+    % environment of the paper. Needs two pdflatex runs (tikzmark); recompile
+    % until the numbers stop changing.
+    \typeout{^^J\pct\pct\space---- GA-OVERLAY: paste from here ----^^J%
+        \string\begin{overpic}[abs,unit=1pt]{ga_pipeline.pdf}}
+    \foreach \mark/\lab/\num in \eqrefmarks {
+        \path[overlay] let \p1 = ($(pic cs:\mark) - (current bounding box.south west)$) in
+            \pgfextra{%
+                \pgfmathsetmacro\refx{\x1}%
+                \pgfmathsetmacro\refy{\y1}%
+                \pgfmathprintnumberto[fixed, precision=2, assume math mode=true]{\refx}\refx
+                \pgfmathprintnumberto[fixed, precision=2, assume math mode=true]{\refy}\refy
+                \typeout{\space\space\string\figeqlink{\refx}{\refy}{\lab}{\num}\pct}%
+            };
+    }
+    % Step-5 tag -> step-2 box: a link rectangle over the tag and a target at the
+    % top-left corner of step 2 (\figsteplink and \figsteptarget, paper preamble).
+    \path[overlay] let \p1 = ($(evaltag.south west) - (current bounding box.south west)$),
+                       \p2 = ($(evaltag.north east) - (evaltag.south west)$),
+                       \p3 = ($(eval.north west) - (current bounding box.south west)$) in
+        \pgfextra{%
+            \pgfmathsetmacro\tagx{\x1}\pgfmathprintnumberto[fixed, precision=2, assume math mode=true]{\tagx}\tagx
+            \pgfmathsetmacro\tagy{\y1}\pgfmathprintnumberto[fixed, precision=2, assume math mode=true]{\tagy}\tagy
+            \pgfmathsetmacro\tagw{\x2}\pgfmathprintnumberto[fixed, precision=2, assume math mode=true]{\tagw}\tagw
+            \pgfmathsetmacro\tagh{\y2}\pgfmathprintnumberto[fixed, precision=2, assume math mode=true]{\tagh}\tagh
+            \pgfmathsetmacro\tgtx{\x3}\pgfmathprintnumberto[fixed, precision=2, assume math mode=true]{\tgtx}\tgtx
+            \pgfmathsetmacro\tgty{\y3}\pgfmathprintnumberto[fixed, precision=2, assume math mode=true]{\tgty}\tgty
+            \typeout{\space\space\string\figsteptarget{\tgtx}{\tgty}{ga:step2}\pct}%
+            \typeout{\space\space\string\figsteplink{\tagx}{\tagy}{\tagw}{\tagh}{ga:step2}\pct}%
+        };
+    \typeout{\string\end{overpic}^^J\pct\pct\space---- GA-OVERLAY: to here ----^^J}
+\end{tikzpicture}
+\end{document}
