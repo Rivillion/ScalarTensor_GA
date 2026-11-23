@@ -14,6 +14,10 @@ checkpoints/
 STOP
 LOCK
 
+# Figures not used in the paper
+figures/fsigma8_game.pdf
+figures/Phi_game.pdf
+
 # Third-party font derivative, not redistributed (the notebook falls back without it)
 fonts/
 
