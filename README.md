@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 <p align="center">
-<img src="preview.png" width="750" title="Reconstructed equation of state w(z)" />
+<img src="preview.png" width="850" title="Reconstructed equation of state w(z)" />
 </p>
 
 This is the repository that contains the Julia code, data and plotting notebook that reproduce the results and
