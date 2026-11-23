@@ -1,0 +1,43 @@
+git_diff_sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+finished_utc = "2026-11-11T11:14:27.111"
+git_branch = "unknown"
+project_sha256 = "2fe2afcb7a090b615c6978bd78713077aa8d9dfc9565640a5353f38e5cc61ab1"
+julia_version = "1.12.6"
+architecture = "x86_64"
+threads = 33
+status = "completed"
+run_id = "0370c668-4471-4bfb-b8e2-8f75e687e599"
+started_utc = "2026-11-10T15:01:13.850"
+schema_minor = 0
+recovery_diagnostics = "events.jsonl:generation_diagnostics"
+schema_major = 1
+schema_id = "optimizer-recovery-v1"
+git_dirty = false
+manifest_sha256 = "a54e02e18f1b55d03606ee22eebab96e3ac98bb7203d3ce88dfec9949b7ffb35"
+git_commit = "unknown"
+units = "H0=100h km s^-1 Mpc^-1; c in km s^-1; redshift dimensionless"
+kernel = "Linux"
+completed_generation = 2000
+model_id = "nonminimal-scalar-tensor-recovery-v1"
+
+[[datasets.DESI_BAO]]
+sha256 = "9ac154ab583ce759c0f7eef3c978c7c70a6ead2d18774caceadf1a350a640585"
+size = 472
+path = "data/desi_gaussian_bao_ALL_GCcomb_mean.txt"
+[[datasets.DESI_BAO]]
+sha256 = "252a143274c8a07c78694c119617d36594f6d7965d00319ca611c6ffb886e509"
+size = 2547
+path = "data/desi_gaussian_bao_ALL_GCcomb_cov.txt"
+
+[[datasets.Growth_RSD]]
+sha256 = "d60a1472005d81a3c35d5ba258286527aefc1cc97436ee77eaee4ac16ae0a679"
+size = 1341
+path = "data/growth_data.txt"
+[[datasets.Growth_RSD]]
+sha256 = "63fd22a02538a9fc32bb11b74b1dc2ecf20cf1797b7ba8d373e2b9148f5ff214"
+size = 284
+path = "data/wigglez_cov.txt"
+[[datasets.Growth_RSD]]
+sha256 = "9d7d7a7347193223da5223aad33f1d58942ac268ed704907df473579b6aa8feb"
+size = 484
+path = "data/sdss_DR12_LRG_FSBAO_DMDHfs8_covtot.txt"

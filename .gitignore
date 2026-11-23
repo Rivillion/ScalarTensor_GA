@@ -1,0 +1,22 @@
+# Python environments and caches (recreate with `uv sync` in binning/python)
+.venv/
+__pycache__/
+*.py[oc]
+.ipynb_checkpoints/
+
+# Kept: runs/grid_main (completed GA runs) and binning/chains/*.h5 (chain summaries), which the notebook reads.
+# Ignored: SLURM logs, raw Nautilus sampler state, sampler logs, and run folders set aside by auto_run.
+logs/
+binning/chains/nautilus/
+binning/chains/logs/
+abandoned/
+checkpoints/
+STOP
+LOCK
+
+# Third-party font derivative, not redistributed (the notebook falls back without it)
+fonts/
+
+# Local tool settings
+.claude/
+.DS_Store

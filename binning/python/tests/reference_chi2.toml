@@ -1,0 +1,337 @@
+# Frozen reference from the former Julia WzBinning core (itself checked against the GA ΛCDM χ² to 5e-4); do not edit.
+[[point]]
+label = "lcdm_at_cpl_map"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "lcdm"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 10.332890233386392
+    Growth_RSD = 17.342726692974274
+    PantheonPlus_SH0ES = 1559.0228506562958
+    Planck_Zhai = 148.9235518357637
+
+    [point.params]
+    M_nuisance = -19.3811
+    Ob0 = 0.04723
+    Om0 = 0.29903
+    h = 0.68995
+    sigma8_0 = 0.80041
+[[point]]
+label = "cpl_map"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "cpl"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 14.316504575521456
+    Growth_RSD = 17.115247120392194
+    PantheonPlus_SH0ES = 1544.3342922242591
+    Planck_Zhai = 0.8825519119798051
+
+    [point.params]
+    M_nuisance = -19.3811
+    Ob0 = 0.04723
+    Om0 = 0.29903
+    h = 0.68995
+    sigma8_0 = 0.80041
+    w0 = -0.87678
+    wa = -0.62451
+[[point]]
+label = "binned_map"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "binned"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 11.247095009039853
+    Growth_RSD = 16.756083165721016
+    PantheonPlus_SH0ES = 1544.1150435532684
+    Planck_Zhai = 0.2896870499475942
+
+    [point.params]
+    M_nuisance = -19.38403
+    Ob0 = 0.04703
+    Om0 = 0.29938
+    h = 0.69073
+    sigma8_0 = 0.80171
+    "w[1]" = -0.96361
+    "w[2]" = -1.41953
+    "w[3]" = -1.00548
+    "w[4]" = -2.20598
+[[point]]
+label = "lcdm_near_1"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "lcdm"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 10.532381839982735
+    Growth_RSD = 17.21621933537244
+    PantheonPlus_SH0ES = 1552.886747643535
+    Planck_Zhai = 8.74371191855119
+
+    [point.params]
+    M_nuisance = -19.393881793117217
+    Ob0 = 0.0476787489185936
+    Om0 = 0.29639115299117474
+    h = 0.6885411406844528
+    sigma8_0 = 0.8011153044651999
+[[point]]
+label = "lcdm_near_2"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "lcdm"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 10.460578499991797
+    Growth_RSD = 17.3749726643719
+    PantheonPlus_SH0ES = 1564.327163093896
+    Planck_Zhai = 203.13285813032618
+
+    [point.params]
+    M_nuisance = -19.38482944470466
+    Ob0 = 0.04671864904093814
+    Om0 = 0.2996638855187808
+    h = 0.6880624256497199
+    sigma8_0 = 0.800621888723104
+[[point]]
+label = "lcdm_prior_1"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "lcdm"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 1501.1730449287224
+    Growth_RSD = 114.37479058225702
+    PantheonPlus_SH0ES = 66851.22356003632
+    Planck_Zhai = 56249.51605527144
+
+    [point.params]
+    M_nuisance = -18.617907871011234
+    Ob0 = 0.05856066832983342
+    Om0 = 0.6899732113158812
+    h = 0.6092485618035269
+    sigma8_0 = 0.4694892919653561
+[[point]]
+label = "lcdm_prior_2"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "lcdm"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 1052.177647940747
+    Growth_RSD = 30.752422941253016
+    PantheonPlus_SH0ES = 87925.73001886196
+    Planck_Zhai = 789518.2923749126
+
+    [point.params]
+    M_nuisance = -20.80822037623888
+    Ob0 = 0.03250745139640861
+    Om0 = 0.12098695806019052
+    h = 0.6042005655896016
+    sigma8_0 = 1.0368614206772504
+[[point]]
+label = "cpl_near_1"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "cpl"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 15.088973950425082
+    Growth_RSD = 17.159618330927433
+    PantheonPlus_SH0ES = 1554.279715943317
+    Planck_Zhai = 8.681358391851461
+
+    [point.params]
+    M_nuisance = -19.37018663814587
+    Ob0 = 0.04747856570943891
+    Om0 = 0.2992863456864081
+    h = 0.6901783820492212
+    sigma8_0 = 0.8018233707883279
+    w0 = -0.8842773680743077
+    wa = -0.6186285471396017
+[[point]]
+label = "cpl_near_2"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "cpl"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 13.786044464819184
+    Growth_RSD = 17.32555449840402
+    PantheonPlus_SH0ES = 1550.6722550929192
+    Planck_Zhai = 21.57567414746678
+
+    [point.params]
+    M_nuisance = -19.377594164133573
+    Ob0 = 0.04677045153300503
+    Om0 = 0.30207677306362
+    h = 0.6887430822558505
+    sigma8_0 = 0.8012935049700517
+    w0 = -0.8868149607957453
+    wa = -0.628827569848185
+[[point]]
+label = "cpl_prior_1"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "cpl"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 773.2712399428675
+    Growth_RSD = 22.141408954593057
+    PantheonPlus_SH0ES = 46469.48418039388
+    Planck_Zhai = 286248.21772880125
+
+    [point.params]
+    M_nuisance = -18.09340776420013
+    Ob0 = 0.11042264346332659
+    Om0 = 0.22390001258920578
+    h = 0.8290174872918963
+    sigma8_0 = 1.0868575608550881
+    w0 = -0.037931608967024744
+    wa = -1.8009311510588295
+[[point]]
+label = "cpl_prior_2"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "cpl"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 11607.74267273915
+    Growth_RSD = 683.9800414556942
+    PantheonPlus_SH0ES = 36106.18843567079
+    Planck_Zhai = 749320.3827402733
+
+    [point.params]
+    M_nuisance = -19.39648846101946
+    Ob0 = 0.11693363032771645
+    Om0 = 0.519719786282343
+    h = 0.9685428817369538
+    sigma8_0 = 1.1562876027798428
+    w0 = -2.7562534749167162
+    wa = 1.7200121647578293
+[[point]]
+label = "binned_near_1"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "binned"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 13.63989504915727
+    Growth_RSD = 16.67944810898117
+    PantheonPlus_SH0ES = 1542.0310238343907
+    Planck_Zhai = 22.341991660873507
+
+    [point.params]
+    M_nuisance = -19.37392834270924
+    Ob0 = 0.04650203673224178
+    Om0 = 0.2973550026292711
+    h = 0.6933568858514482
+    sigma8_0 = 0.7980069396745066
+    "w[1]" = -0.9601831180875714
+    "w[2]" = -1.434765069326485
+    "w[3]" = -1.0093375021306508
+    "w[4]" = -2.214914706972004
+[[point]]
+label = "binned_near_2"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "binned"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 10.57969409697785
+    Growth_RSD = 16.81772474248517
+    PantheonPlus_SH0ES = 1543.12031760984
+    Planck_Zhai = 28.011207877731138
+
+    [point.params]
+    M_nuisance = -19.379942326354595
+    Ob0 = 0.04740895278467126
+    Om0 = 0.30004724229065477
+    h = 0.6936153842328299
+    sigma8_0 = 0.7997520789740363
+    "w[1]" = -0.9663643982958844
+    "w[2]" = -1.3995551528681027
+    "w[3]" = -1.0052212399217404
+    "w[4]" = -2.216917611908729
+[[point]]
+label = "binned_prior_1"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "binned"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 7.743956427655494e7
+    Growth_RSD = 393.72375451165817
+    PantheonPlus_SH0ES = 24852.9787523765
+    Planck_Zhai = 3.2070029235637503e9
+
+    [point.params]
+    M_nuisance = -18.309649663403498
+    Ob0 = 0.013548960739070233
+    Om0 = 0.12010060130873865
+    h = 0.8120016716133067
+    sigma8_0 = 0.6612753804897136
+    "w[1]" = 0.014125218666205974
+    "w[2]" = 0.49145241743366785
+    "w[3]" = -0.07465530563232115
+    "w[4]" = 0.3186724109245507
+[[point]]
+label = "binned_prior_2"
+likelihoods = ["PantheonPlus_SH0ES", "DESI_BAO", "Planck_Zhai", "Growth_RSD"]
+model = "binned"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 8940.419458278526
+    Growth_RSD = 355.3657277975307
+    PantheonPlus_SH0ES = 60380.69819227697
+    Planck_Zhai = 395159.40852285066
+
+    [point.params]
+    M_nuisance = -20.004039430537073
+    Ob0 = 0.08683277621890698
+    Om0 = 0.25786174423870856
+    h = 0.8699056663863372
+    sigma8_0 = 1.140141006391699
+    "w[1]" = -2.461098711001915
+    "w[2]" = -0.8683522088927895
+    "w[3]" = 0.6113465718962274
+    "w[4]" = -2.7836728428759328
+[[point]]
+label = "cpl_validation_desi"
+likelihoods = ["DESI_BAO", "Planck_Zhai", "PantheonPlus_Marg"]
+model = "cpl"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 12.037362019995392
+    PantheonPlus_Marg = 1412.515181094408
+    Planck_Zhai = 12.968064457534066
+
+    [point.params]
+    Ob0 = 0.049
+    Om0 = 0.3114
+    h = 0.6748
+    w0 = -0.838
+    wa = -0.62
+[[point]]
+label = "binned_validation"
+likelihoods = ["DESI_BAO", "Planck_Zhai", "PantheonPlus_Marg"]
+model = "binned"
+ok = true
+
+    [point.chi2]
+    DESI_BAO = 5.968163607246642
+    PantheonPlus_Marg = 1412.1196629069746
+    Planck_Zhai = 34.63385430081723
+
+    [point.params]
+    Ob0 = 0.049
+    Om0 = 0.31
+    h = 0.67
+    "w[1]" = -0.9
+    "w[2]" = -1.2
+    "w[3]" = -0.8
+    "w[4]" = -1.5

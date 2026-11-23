@@ -1,0 +1,26 @@
+# Up-to-date compilation of growth rate RSD data (Table A.1), 20 points.
+# Omega_m is the fiducial matter density of each measurement.
+# Asymmetric errors are symmetrized as the mean of the upper and lower error:
+#   Huterer_2017 (+0.048, -0.045) -> 0.0465;  Qin_2019 (+0.082, -0.081) -> 0.0815.
+# corr_block: 0 = uncorrelated, 1 = WiggleZ (wigglez_cov.txt), 2 = BOSS DR12 LRG (sdss_DR12_LRG_FSBAO_DMDHfs8_covtot.txt).
+# z  fsigma8  error  corr_block  Omega_m  source
+0.17   0.510  0.060   0  0.3    Song_Percival_2009
+0.02   0.314  0.048   0  0.266  Davis_2011
+0.02   0.398  0.065   0  0.3    Turnbull_2012
+0.44   0.413  0.080   1  0.27   Blake_2012
+0.60   0.390  0.063   1  0.27   Blake_2012
+0.73   0.437  0.072   1  0.27   Blake_2012
+0.18   0.36   0.09    0  0.27   Blake_2013
+0.38   0.44   0.06    0  0.27   Blake_2013
+1.4    0.482  0.116   0  0.27   Okumura_2016
+0.02   0.428  0.0465  0  0.3    Huterer_2017
+0.6    0.55   0.12    0  0.3    Pezzotta_2017
+0.86   0.40   0.11    0  0.3    Pezzotta_2017
+0.03   0.404  0.0815  0  0.312  Qin_2019
+0.013  0.46   0.06    0  0.315  Avila_2021
+0.15   0.53   0.16    0  0.31   Alam_2021
+0.38   0.500  0.047   2  0.31   Alam_2021
+0.51   0.455  0.039   2  0.31   Alam_2021
+0.70   0.448  0.043   0  0.31   Alam_2021
+0.85   0.315  0.095   0  0.31   Alam_2021
+1.48   0.462  0.045   0  0.31   Alam_2021
