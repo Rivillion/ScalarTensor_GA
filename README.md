@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 <p align="center">
-<img src="preview.png" width="750" title="Reconstructed equation of state w(z)" />
+<img src="preview.png" width="850" title="Reconstructed equation of state w(z)" />
 </p>
 
 This is the repository that contains the Julia code, data and plotting notebook that reproduce the results and
@@ -26,7 +26,7 @@ of structure. Candidates are ranked by a joint likelihood of DESI DR2 BAO, Panth
 SH0ES Cepheids, compressed CMB distance priors, and redshift-space distortion measurements of $f\sigma_8$. We
 restrict to the unscreened branch of the theory and impose Solar System constraints on the post-Newtonian parameter
 $\gamma$ and on the time variation of the gravitational coupling, together with a Big Bang nucleosynthesis bound on
-its evolution. Across 64 independent runs, the best reconstruction improves the fit relative to ΛCDM by
+its evolution. Across 64 independent runs, the best reconstruction improves the fit relative to $\Lambda\mathrm{CDM}$ by
 $\Delta\chi^2=-16.6$, compared with $\Delta\chi^2=-10.6$ for the Chevallier–Polarski–Linder dark-energy
 parametrization. The preferred coupling is well described by $F(\varphi)=c_1\varphi^2+e^{\varphi}(1-c_2\varphi)$.
 The reconstructed theory shows phantom behavior at $z\gtrsim0.5$, but it remains close to $w=-1$ at low redshift.
