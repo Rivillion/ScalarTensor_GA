@@ -8,9 +8,7 @@
 </p>
 
 This is the repository that contains the Julia code, data and plotting notebook that reproduce the results and
-figures of [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX). A genetic algorithm evolves symbolic expressions for
-the non-minimal coupling $F(\varphi)$ and the potential $U(\varphi)$ of a scalar–tensor theory, and ranks them
-against DESI DR2 BAO, Pantheon+ and SH0ES, compressed CMB and $f\sigma_8$ data. See [USAGE.md](USAGE.md) for how to
+figures of [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX). See [USAGE.md](USAGE.md) for how to
 run the code and [data/README.md](data/README.md) for the sources of the observational data.
 
 ## Abstract
