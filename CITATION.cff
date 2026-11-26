@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "A Genetic Algorithm Approach to Reconstructing Scalar-Tensor Lagrangians"
+type: software
+license: MIT
+repository-code: "https://github.com/Rivillion/ScalarTensor_GA"
+authors:
+  - family-names: Artola
+    given-names: Mikel
+  - family-names: Alestas
+    given-names: George
+  - family-names: Efstratiou
+    given-names: Dimitrios
+  - family-names: Paraskevas
+    given-names: Evangelos Achilleas
+identifiers:
+  - type: url
+    value: "https://arxiv.org/abs/2611.34512"
+    description: "arXiv preprint"
+preferred-citation:
+  type: article
+  title: "A Genetic Algorithm Approach to Reconstructing Scalar-Tensor Lagrangians"
+  authors:
+    - family-names: Artola
+      given-names: Mikel
+    - family-names: Alestas
+      given-names: George
+    - family-names: Efstratiou
+      given-names: Dimitrios
+    - family-names: Paraskevas
+      given-names: Evangelos Achilleas
+  year: 2026
+  month: 11
+  url: "https://arxiv.org/abs/2611.34512"
+  identifiers:
+    - type: other
+      value: "arXiv:2611.34512"
+      description: "arXiv eprint"
+  notes: "arXiv:2611.34512 [astro-ph.CO], IFT-UAM/CSIC-26-173"
